@@ -3,7 +3,7 @@ return {
   opts = function(_, opts)
     -- Get AstroUI icons
     local get_icon = require("astroui").get_icon
-    
+
     return require("astrocore").extend_tbl(opts, {
       -- Remove buffers and git from sources
       sources = {
@@ -21,8 +21,8 @@ return {
         position = "float",
         popup = {
           size = {
-            height = 20, -- Fixed height
-            width = 45,  -- Set a reasonable fixed width for now
+            height = 20,
+            width = 30,
           },
           position = {
             row = 2,
@@ -32,7 +32,7 @@ return {
         mappings = {
           ["<space>"] = "none",
           ["<esc>"] = "close_window",
-        }
+        },
       },
       filesystem = {
         follow_current_file = {
@@ -56,7 +56,7 @@ return {
       },
       default_component_configs = {
         container = {
-          enable_character_fade = true
+          enable_character_fade = true,
         },
         indent = {
           indent_size = 2,
@@ -67,14 +67,14 @@ return {
           highlight = "NeoTreeIndentMarker",
         },
         icon = {
-          folder_closed = get_icon("FolderClosed"),
-          folder_open = get_icon("FolderOpen"),
-          folder_empty = get_icon("FolderEmpty"),
-          default = get_icon("DefaultFile"),
-          highlight = "NeoTreeFileIcon"
+          folder_closed = get_icon "FolderClosed",
+          folder_open = get_icon "FolderOpen",
+          folder_empty = get_icon "FolderEmpty",
+          default = get_icon "DefaultFile",
+          highlight = "NeoTreeFileIcon",
         },
         modified = {
-          symbol = get_icon("FileModified"),
+          symbol = get_icon "FileModified",
           highlight = "NeoTreeModified",
         },
         name = {
@@ -84,44 +84,42 @@ return {
         },
         git_status = {
           symbols = {
-            added     = get_icon("GitAdd"),
-            modified  = get_icon("GitChange"),
-            deleted   = get_icon("GitDelete"),
-            renamed   = get_icon("GitRenamed"),
-            untracked = get_icon("GitUntracked"),
-            ignored   = get_icon("GitIgnored"),
-            unstaged  = get_icon("GitUnstaged"),
-            staged    = get_icon("GitStaged"),
-            conflict  = get_icon("GitConflict"),
-          }
+            added = get_icon "GitAdd",
+            modified = get_icon "GitChange",
+            deleted = get_icon "GitDelete",
+            renamed = get_icon "GitRenamed",
+            untracked = get_icon "GitUntracked",
+            ignored = get_icon "GitIgnored",
+            unstaged = get_icon "GitUnstaged",
+            staged = get_icon "GitStaged",
+            conflict = get_icon "GitConflict",
+          },
         },
         diagnostics = {
           symbols = {
-            hint = get_icon("DiagnosticHint"),
-            info = get_icon("DiagnosticInfo"),
-            warn = get_icon("DiagnosticWarn"),
-            error = get_icon("DiagnosticError"),
-          }
+            hint = get_icon "DiagnosticHint",
+            info = get_icon "DiagnosticInfo",
+            warn = get_icon "DiagnosticWarn",
+            error = get_icon "DiagnosticError",
+          },
         },
       },
       -- This removes the header completely
       hide_root_node = true,
       retain_hidden_root_indent = false,
-      
+
       -- Add event handlers to ensure proper initialization
       event_handlers = {
         {
           event = "file_opened",
           handler = function(file_path)
             -- auto close
-            require("neo-tree.command").execute({ action = "close" })
-          end
+            require("neo-tree.command").execute { action = "close" }
+          end,
         },
         {
           event = "neo_tree_popup_buffer_enter",
-          handler = function()
-            vim.cmd([[setlocal wrap]])
-          end,
+          handler = function() vim.cmd [[setlocal wrap]] end,
         },
       },
     })
