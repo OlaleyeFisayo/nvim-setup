@@ -28,6 +28,9 @@ return {
             row = 2,
             col = 2,
           },
+          -- Remove the title/header from popup
+          title = "",
+          title_pos = "center",
         },
         mappings = {
           ["<space>"] = "none",
