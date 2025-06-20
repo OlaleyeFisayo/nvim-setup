@@ -10,5 +10,6 @@ return {
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.editing-support.auto-save-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.terminal-integration.toggleterm-manager-nvim" },
   -- import/override with your plugins folder
 }
