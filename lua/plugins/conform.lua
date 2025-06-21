@@ -17,7 +17,7 @@ return {
           )[1] ~= nil
         end,
       },
-    -- },
+    },
     format_on_save = {
       lsp_fallback = true,
     },
