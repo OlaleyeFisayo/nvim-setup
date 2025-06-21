@@ -1,58 +1,64 @@
 return {
   {
-    "AstroNvim/astrocore",
-    ---@type AstroCoreOpts
+    "astronvim/astrocore",
+    ---@type astrocoreopts
     opts = {
       mappings = {
         n = {
-          -- Move single line up/down
-          ["<A-j>"] = { ":m .+1<CR>==", desc = "Move line down" },
-          ["<A-k>"] = { ":m .-2<CR>==", desc = "Move line up" },
+          -- move single line up/down
+          ["<a-j>"] = { ":m .+1<cr>==", desc = "move line down" },
+          ["<a-k>"] = { ":m .-2<cr>==", desc = "move line up" },
 
-          -- Toggle between current and previous buffer
-          ["<Leader><Leader>"] = { "<C-^>", desc = "Toggle previous buffer" },
+          -- toggle between current and previous buffer
+          ["<leader><leader>"] = { "<c-^>", desc = "toggle previous buffer" },
 
-          -- Disable existing ToggleTerm mappings
-          ["<Leader>tf"] = false,
-          ["<Leader>th"] = false,
-          ["<Leader>tl"] = false,
-          ["<Leader>tn"] = false,
-          ["<Leader>tp"] = false,
-          ["<Leader>tt"] = false,
-          ["<Leader>tv"] = false,
+          -- disable existing toggleterm mappings
+          ["<leader>tf"] = false,
+          ["<leader>th"] = false,
+          ["<leader>tl"] = false,
+          ["<leader>tn"] = false,
+          ["<leader>tp"] = false,
+          ["<leader>tt"] = false,
+          ["<leader>tv"] = false,
 
-          -- Main terminal toggle
-          ["<C-n>"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "Toggle floating terminal" },
+          -- main terminal toggle
+          ["<c-n>"] = { "<cmd>toggleterm direction=float<cr>", desc = "toggle floating terminal" },
 
-          -- Numbered floating terminals
-          ["<C-1>"] = { "<Cmd>1ToggleTerm direction=float<CR>", desc = "Toggle terminal 1" },
-          ["<C-2>"] = { "<Cmd>2ToggleTerm direction=float<CR>", desc = "Toggle terminal 2" },
-          ["<C-3>"] = { "<Cmd>3ToggleTerm direction=float<CR>", desc = "Toggle terminal 3" },
-          ["<C-4>"] = { "<Cmd>4ToggleTerm direction=float<CR>", desc = "Toggle terminal 4" },
-          ["<C-5>"] = { "<Cmd>5ToggleTerm direction=float<CR>", desc = "Toggle terminal 5" },
-          ["<C-6>"] = { "<Cmd>6ToggleTerm direction=float<CR>", desc = "Toggle terminal 6" },
-          ["<C-7>"] = { "<Cmd>7ToggleTerm direction=float<CR>", desc = "Toggle terminal 7" },
-          ["<C-8>"] = { "<Cmd>8ToggleTerm direction=float<CR>", desc = "Toggle terminal 8" },
-          ["<C-9>"] = { "<Cmd>9ToggleTerm direction=float<CR>", desc = "Toggle terminal 9" },
+          -- numbered floating terminals
+          ["<c-1>"] = { "<cmd>1toggleterm direction=float<cr>", desc = "toggle terminal 1" },
+          ["<c-2>"] = { "<cmd>2toggleterm direction=float<cr>", desc = "toggle terminal 2" },
+          ["<c-3>"] = { "<cmd>3toggleterm direction=float<cr>", desc = "toggle terminal 3" },
+          ["<c-4>"] = { "<cmd>4toggleterm direction=float<cr>", desc = "toggle terminal 4" },
+          ["<c-5>"] = { "<cmd>5toggleterm direction=float<cr>", desc = "toggle terminal 5" },
+          ["<c-6>"] = { "<cmd>6toggleterm direction=float<cr>", desc = "toggle terminal 6" },
+          ["<c-7>"] = { "<cmd>7toggleterm direction=float<cr>", desc = "toggle terminal 7" },
+          ["<c-8>"] = { "<cmd>8toggleterm direction=float<cr>", desc = "toggle terminal 8" },
+          ["<c-9>"] = { "<cmd>9toggleterm direction=float<cr>", desc = "toggle terminal 9" },
         },
-        -- Terminal mode mappings
+        -- terminal mode mappings
         t = {
-          ["<C-n>"] = { "<Cmd>ToggleTerm<CR>", desc = "Toggle floating terminal" },
-          ["<C-1>"] = { "<Cmd>1ToggleTerm<CR>", desc = "Toggle terminal 1" },
-          ["<C-2>"] = { "<Cmd>2ToggleTerm<CR>", desc = "Toggle terminal 2" },
-          ["<C-3>"] = { "<Cmd>3ToggleTerm<CR>", desc = "Toggle terminal 3" },
-          ["<C-4>"] = { "<Cmd>4ToggleTerm<CR>", desc = "Toggle terminal 4" },
-          ["<C-5>"] = { "<Cmd>5ToggleTerm<CR>", desc = "Toggle terminal 5" },
-          ["<C-6>"] = { "<Cmd>6ToggleTerm<CR>", desc = "Toggle terminal 6" },
-          ["<C-7>"] = { "<Cmd>7ToggleTerm<CR>", desc = "Toggle terminal 7" },
-          ["<C-8>"] = { "<Cmd>8ToggleTerm<CR>", desc = "Toggle terminal 8" },
-          ["<C-9>"] = { "<Cmd>9ToggleTerm<CR>", desc = "Toggle terminal 9" },
+          ["<c-n>"] = { "<cmd>toggleterm<cr>", desc = "toggle floating terminal" },
+          ["<c-1>"] = { "<cmd>1toggleterm<cr>", desc = "toggle terminal 1" },
+          ["<c-2>"] = { "<cmd>2toggleterm<cr>", desc = "toggle terminal 2" },
+          ["<c-3>"] = { "<cmd>3toggleterm<cr>", desc = "toggle terminal 3" },
+          ["<c-4>"] = { "<cmd>4toggleterm<cr>", desc = "toggle terminal 4" },
+          ["<c-5>"] = { "<cmd>5toggleterm<cr>", desc = "toggle terminal 5" },
+          ["<c-6>"] = { "<cmd>6toggleterm<cr>", desc = "toggle terminal 6" },
+          ["<c-7>"] = { "<cmd>7toggleterm<cr>", desc = "toggle terminal 7" },
+          ["<c-8>"] = { "<cmd>8toggleterm<cr>", desc = "toggle terminal 8" },
+          ["<c-9>"] = { "<cmd>9toggleterm<cr>", desc = "toggle terminal 9" },
         },
-        -- Visual mode
+        -- visual mode
         v = {
-          -- Move selected lines up/down
-          ["<A-j>"] = { ":m '>+1<CR>gv=gv", desc = "Move selection down" },
-          ["<A-k>"] = { ":m '<-2<CR>gv=gv", desc = "Move selection up" },
+          -- move selected lines up/down
+          ["<a-j>"] = { ":m '>+1<cr>gv=gv", desc = "move selection down" },
+          ["<a-k>"] = { ":m '<-2<cr>gv=gv", desc = "move selection up" },
+        },
+        -- insert mode
+        i = {
+          -- move current line up/down with Alt+Up/Down arrows
+          ["<a-up>"] = { "<esc>:m .-2<cr>==gi", desc = "move line up" },
+          ["<a-down>"] = { "<esc>:m .+1<cr>==gi", desc = "move line down" },
         },
       },
     },
